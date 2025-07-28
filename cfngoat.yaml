@@ -639,23 +639,23 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data-science"
 
-  LogsBucket:
+  #LogsBucket:
     # not encrypted
-    Type: AWS::S3::Bucket
-    DeletionPolicy: Delete
-    Properties:
-      BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
-      AccessControl: LogDeliveryWrite
-      VersioningConfiguration:
-        Status: Enabled
-      BucketEncryption: 
-        ServerSideEncryptionConfiguration:
-          - ServerSideEncryptionByDefault:
-              KMSMasterKeyID: !Ref LogsKey
-              SSEAlgorithm: aws:kms
-      Tags:
-        - Key: Name
-          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
+   # Type: AWS::S3::Bucket
+    #DeletionPolicy: Delete
+    #Properties:
+    #  BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
+    #  AccessControl: LogDeliveryWrite
+    #  VersioningConfiguration:
+    #    Status: Enabled
+    #  BucketEncryption: 
+    #    ServerSideEncryptionConfiguration:
+    #      - ServerSideEncryptionByDefault:
+    #          KMSMasterKeyID: !Ref LogsKey
+    #          SSEAlgorithm: aws:kms
+    #  Tags:
+    #    - Key: Name
+    #      Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
 
    ########################
    ### Clean S3 Buckets ### 
